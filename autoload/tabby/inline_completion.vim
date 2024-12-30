@@ -14,6 +14,7 @@ function! tabby#inline_completion#Setup()
     autocmd!
     autocmd User tabby_lsp_on_buffer_attached call tabby#inline_completion#Install()
   augroup end
+  autocmd BufNewFile,BufRead * call tabby#inline_completion#keybindings#Setup()
 endfunction
 
 function! tabby#inline_completion#Install()
